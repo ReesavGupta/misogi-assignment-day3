@@ -1,0 +1,84 @@
+{
+  "test_queries": [
+    {
+      "id": 1,
+      "query": "How do I solve 3x + 7 = 22?",
+      "grade_level": 8,
+      "topic": "linear_equations",
+      "expected_answer": "x = 5",
+      "difficulty": "medium"
+    },
+    {
+      "id": 2,
+      "query": "What is the area of a triangle with base 8 cm and height 6 cm?",
+      "grade_level": 7,
+      "topic": "geometry",
+      "expected_answer": "24 square cm",
+      "difficulty": "easy"
+    },
+    {
+      "id": 3,
+      "query": "Explain the order of operations for 2 + 3 × 4 - 1",
+      "grade_level": 6,
+      "topic": "arithmetic",
+      "expected_answer": "13",
+      "difficulty": "easy"
+    },
+    {
+      "id": 4,
+      "query": "I got x = 2 when solving x/3 = 6. Is this correct?",
+      "grade_level": 7,
+      "topic": "error_correction",
+      "expected_answer": "No, x should be 18",
+      "difficulty": "medium"
+    },
+    {
+      "id": 5,
+      "query": "How do you find the slope of a line passing through points (2, 3) and (5, 9)?",
+      "grade_level": 9,
+      "topic": "coordinate_geometry",
+      "expected_answer": "slope = 2",
+      "difficulty": "medium"
+    },
+    {
+      "id": 6,
+      "query": "Can you create a practice problem about finding the perimeter of a rectangle?",
+      "grade_level": 6,
+      "topic": "problem_generation",
+      "expected_answer": "Generated problem with solution",
+      "difficulty": "easy"
+    },
+    {
+      "id": 7,
+      "query": "What's the difference between area and perimeter?",
+      "grade_level": 6,
+      "topic": "concept_explanation",
+      "expected_answer": "Clear conceptual explanation",
+      "difficulty": "easy"
+    },
+    {
+      "id": 8,
+      "query": "Solve: 2(x + 3) = 14",
+      "grade_level": 8,
+      "topic": "distributive_property",
+      "expected_answer": "x = 4",
+      "difficulty": "medium"
+    },
+    {
+      "id": 9,
+      "query": "How do I convert 3/4 to a decimal?",
+      "grade_level": 6,
+      "topic": "fractions_decimals",
+      "expected_answer": "0.75",
+      "difficulty": "easy"
+    },
+    {
+      "id": 10,
+      "query": "What is a quadratic equation and can you give me an example?",
+      "grade_level": 9,
+      "topic": "quadratic_introduction",
+      "expected_answer": "Explanation with example like x² + 2x + 1 = 0",
+      "difficulty": "medium"
+    }
+  ]
+}
