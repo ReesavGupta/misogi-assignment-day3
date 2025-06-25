@@ -1,43 +1,43 @@
-# 🧠 Prompt Engineering Pipeline PRD
+# Project Requirements - Advanced Prompt Engineering System
 
-**Project Title:** Multi-Path Reasoning + Automated Prompt Optimization  
-**Target Assignee:** Autonomous Agent / Developer Team  
-**Last Updated:** 2025-06-25  
+**What I'm Building:** A system that uses multiple reasoning paths and automatically improves its own prompts
+**Who's Working on This:** Me (with some help from AI tools)
+**Last Updated:** June 25, 2025
 
-## 🎯 Objective
+## What I'm Trying to Achieve
 
-Design and implement a modular prompt engineering pipeline that:
+I want to build a prompt engineering system that goes way beyond the typical "ask once, get one answer" approach. Here's what I'm aiming for:
 
-1. **Leverages Tree-of-Thought (ToT) and Self-Consistency** for multi-path reasoning
-2. **Uses an automated prompt optimization loop** inspired by OPRO and TextGrad
-3. **Targets structured reasoning tasks** (e.g., multi-step math, logic puzzles, code debugging)
+1. **Smart multi-path reasoning** - Using Tree-of-Thought and self-consistency to explore different ways of solving problems
+2. **Self-improving prompts** - Taking inspiration from OPRO and TextGrad to automatically make prompts better over time
+3. **Focus on complex reasoning** - Targeting challenging tasks like multi-step math problems, logic puzzles, and code debugging
 
-## 📦 Problem Statement
+## The Core Challenge
 
-Given a reasoning-intensive task, the pipeline should:
+When I give this system a complex reasoning task, here's what should happen:
 
-1. Generate multiple reasoning paths using GPT-2 locally
-2. Select answers via self-consistent aggregation
-3. Detect performance gaps
-4. Automatically generate multiple improved prompt variants
-5. Enable human-in-the-loop review of hallucinations and refinements
+1. Generate several different approaches to solving the problem using a local GPT-2 model
+2. Compare the different answers and pick the most consistent/reliable one
+3. Figure out where the system is struggling
+4. Automatically create improved prompt variations
+5. Let me review any weird or wrong outputs and help refine the approach
 
-## 🛠️ Tasks & Deliverables
+## What I Need to Build
 
-### ✅ Part 1: Domain & Task Selection
+### Part 1: Setting Up Test Problems ✅
 
-**Goal:** Curate 5–7 reasoning tasks across domains.
+**What I need to do:** Collect 5-7 different reasoning challenges that will really test the system.
 
-**Implementation:**
-- Store in `tasks/` as `.json` or `.yaml`
-- Each task must include:
-  - Task ID
-  - Domain (math, logic, code, etc.)
-  - Problem statement
-  - Expected solution
-  - Evaluation rule (e.g., assert or scoring function)
+**How I'm organizing this:**
+- Save everything in the `tasks/` folder as JSON or YAML files
+- Each problem needs:
+  - A unique ID so I can track it
+  - What domain it's from (math, logic, coding, etc.)
+  - The actual problem statement
+  - What the correct answer should be
+  - How to check if an answer is right
 
-**Example Format:**
+**Here's what a task file looks like:**
 ```json
 {
   "id": "math_001",
@@ -48,26 +48,20 @@ Given a reasoning-intensive task, the pipeline should:
 }
 ```
 
-### ✅ Part 2: Tree-of-Thought (ToT) + Self-Consistency
+### Part 2: Multi-Path Reasoning Engine ✅
 
-**Goal:** Implement ToT + Self-Consistency using local GPT-2.
+**What I need to do:** Build the core system that generates multiple ways to solve each problem and picks the best answer.
 
-**Instructions:**
-- Folder: `src/reasoning/`
-- For each task:
-  - Generate 3–5 diverse reasoning paths
-  - Structure each path as a tree:
-    - Node = thought
-    - Branch = alternate logic
-  - Prune low-quality or redundant branches
-  - Use Self-Consistency:
-    - Apply majority vote or agreement
-  - Log:
-    - Tree paths
-    - Final answer
-    - Agreement confidence
+**How this works:**
+- Put the code in `src/reasoning/`
+- For each problem:
+  - Generate 3-5 completely different approaches to solving it
+  - Organize each approach as a tree structure where each "thought" is a node and different logical paths are branches
+  - Remove approaches that are obviously wrong or just repeating others
+  - Use self-consistency to pick the final answer by seeing which approaches agree
+  - Keep detailed logs of everything
 
-**Output Example:**
+**What the output looks like:**
 ```json
 {
   "task_id": "math_001",
@@ -77,98 +71,100 @@ Given a reasoning-intensive task, the pipeline should:
 }
 ```
 
-- Save results to `logs/reasoning_paths/{task_id}.json`
+- All results get saved to `logs/reasoning_paths/{task_id}.json`
 
-### ✅ Part 3: Automated Prompt Optimization
+### Part 3: Self-Improving Prompts ✅
 
-**Goal:** Optimize prompts automatically using OPRO/TextGrad-style feedback loops.
+**What I need to do:** Build a system that automatically makes prompts better when they're not working well.
 
-**Instructions:**
-- Folder: `src/prompt_optimization/`
-- For any underperforming task:
-  - Trigger optimization loop
-  - Use meta-prompting to generate 3–5 alternative prompts
-  - Example meta-prompt: *"You failed Task X. Rewrite the original prompt to be clearer, more detailed, or better at eliciting reasoning."*
-  - Store new prompts in `prompts/{task_id}_v{n}.txt`
+**How this works:**
+- Code goes in `src/prompt_optimization/`
+- When a task isn't performing well:
+  - The system automatically starts an improvement loop
+  - It uses meta-prompting to create 3-5 different versions of the original prompt
+  - For example, it might say: *"The original prompt failed on Task X. Rewrite it to be clearer, more detailed, or better at encouraging step-by-step reasoning."*
+  - New prompt versions get saved as `prompts/{task_id}_v{n}.txt`
 
-**Requirements:**
-- Each iteration versioned
-- Optimizer generates multiple variants, not just one
-- Save optimization results to `logs/optimization/{task_id}.json`
+**Important requirements:**
+- Every iteration gets a version number so I can track the evolution
+- The optimizer creates multiple alternatives, not just one
+- All optimization results get logged to `logs/optimization/{task_id}.json`
 
-### ✅ Part 4: Evaluation & Reflection
+### Part 4: Measuring Success ✅
 
-**Goal:** Evaluate overall pipeline performance and prompt improvement.
+**What I need to do:** Build a comprehensive evaluation system to see how well everything is working.
 
-**Folder:** `evaluation/`
+**Where this goes:** `evaluation/` folder
 
-**Metrics:**
-| Metric | Description |
+**What I'm measuring:**
+| What I'm Tracking | What It Means |
 |--------|-------------|
-| Task Accuracy | Percentage of correct answers |
-| Reasoning Coherence | Manual or LLM-assisted review (qualitative) |
-| Hallucination Rate | Manually annotated % of unsupported reasoning |
-| Prompt Improvement | Accuracy delta before/after optimization |
+| Task Accuracy | How often does it get the right answer? |
+| Reasoning Quality | Do the logical steps make sense? (I'll review this manually or use another AI to help) |
+| Nonsense Rate | How often does it make unsupported claims or logical errors? |
+| Improvement Over Time | Do the optimized prompts actually work better than the originals? |
 
-**Deliverables:**
-- `evaluation/results.json` (per-task scores)
-- `evaluation/metrics_report.md` (aggregate results)
-- `evaluation/reflection.md` (what worked, what didn't)
+**What I need to produce:**
+- `evaluation/results.json` - Detailed scores for each task
+- `evaluation/metrics_report.md` - Summary of overall performance
+- `evaluation/reflection.md` - My analysis of what worked well and what didn't
 
-## 🔁 Pipeline Flow Summary
+## How the Whole System Works
 
-1. **Load task** from `tasks/`
-2. **Generate reasoning paths** via ToT (GPT-2) → `logs/`
-3. **Apply Self-Consistency** → select final answer
-4. **Evaluate performance**
-   - If low, trigger optimizer → propose N new prompts
-5. **Rerun** from step 2 for new prompt variants
-6. **Save all logs** + prompt versions
+Here's the step-by-step process:
 
-## 📁 Folder Structure
+1. **Load a problem** from the `tasks/` folder
+2. **Generate multiple reasoning approaches** using Tree-of-Thought with GPT-2, save everything to `logs/`
+3. **Pick the best answer** using self-consistency (see which approaches agree)
+4. **Check how well it performed**
+   - If it's not doing well, automatically trigger the prompt optimizer to create better versions
+5. **Test the new prompts** by running steps 2-4 again
+6. **Keep detailed records** of all attempts and prompt versions
+
+## How I'm Organizing the Files
 
 ```
-📦 prompt-engineering-pipeline/
- ┣ 📁 tasks/
- ┃ ┗ task_*.json
- ┣ 📁 prompts/
- ┃ ┣ task_001_v1.txt
- ┃ ┣ task_001_v2.txt
- ┣ 📁 src/
- ┃ ┣ 📁 reasoning/
- ┃ ┣ 📁 prompt_optimization/
- ┣ 📁 logs/
- ┃ ┣ 📁 reasoning_paths/
- ┃ ┣ 📁 optimization/
- ┣ 📁 evaluation/
- ┃ ┣ results.json
- ┃ ┣ metrics_report.md
- ┃ ┗ reflection.md
- ┗ README.md
+prompt-engineering-pipeline/
+ ┣ tasks/                       # All the test problems
+ ┃ ┗ task_*.json               # Individual problem files
+ ┣ prompts/                     # Different prompt versions
+ ┃ ┣ task_001_v1.txt           # Original prompt for task 1
+ ┃ ┣ task_001_v2.txt           # Improved version
+ ┣ src/                         # The actual code
+ ┃ ┣ reasoning/                 # Tree-of-Thought implementation
+ ┃ ┣ prompt_optimization/       # Automatic prompt improvement
+ ┣ logs/                        # All the results and debugging info
+ ┃ ┣ reasoning_paths/           # Records of different thinking approaches
+ ┃ ┣ optimization/              # How prompts evolved
+ ┣ evaluation/                  # Performance analysis
+ ┃ ┣ results.json              # Detailed scores
+ ┃ ┣ metrics_report.md         # Summary report
+ ┃ ┗ reflection.md             # My analysis of what worked
+ ┗ README.md                   # Overview and instructions
 ```
 
-## ⚙️ Tech Stack & Constraints
+## Technical Constraints and Choices
 
-- **Local Model:** GPT-2 (via HuggingFace Transformers)
-- **Compute:** NVIDIA RTX 2050 (4GB VRAM)
-- **Batch Size:** Must be tuned to avoid OOM (recommend: 1–2 per GPU iteration)
-- **Dependencies:**
-  - `transformers`, `datasets`, `accelerate`, `tqdm`, `pandas`
+**What I'm using:**
+- **Local AI model:** GPT-2 through HuggingFace Transformers (keeps everything private)
+- **Hardware:** NVIDIA RTX 2050 with 4GB VRAM (not the most powerful, but it works)
+- **Batch size:** Keeping it small (1-2 items at a time) to avoid running out of memory
+- **Required packages:** transformers, datasets, accelerate, tqdm, pandas
 
-## 🚀 Success Criteria
+## How I'll Know This Is Successful
 
-1. **Pipeline Completeness:** All 4 parts implemented and functional
-2. **Performance Improvement:** Demonstrable accuracy gains through prompt optimization
-3. **Scalability:** Can handle 5-7 diverse reasoning tasks
-4. **Documentation:** Clear logs, metrics, and reflection reports
-5. **Reproducibility:** All experiments can be replicated with saved configurations
+1. **Everything works:** All four parts of the system are implemented and functional
+2. **Actually improves:** The optimized prompts demonstrably perform better than the originals
+3. **Handles variety:** Can successfully work with 5-7 different types of reasoning tasks
+4. **Well documented:** Clear logs, metrics, and analysis reports
+5. **Reproducible:** Anyone can run the same experiments and get similar results
 
-## 📋 Next Steps
+## My Development Plan
 
-1. Create folder structure
-2. Implement Part 1: Task curation
-3. Implement Part 2: ToT + Self-Consistency
-4. Implement Part 3: Prompt optimization
-5. Implement Part 4: Evaluation framework
-6. Run end-to-end pipeline tests
+1. Set up the folder structure and basic framework
+2. Build the task curation system
+3. Implement the Tree-of-Thought reasoning engine
+4. Create the automatic prompt optimization system
+5. Build the evaluation and analysis framework
+6. Run comprehensive end-to-end tests
 7. Generate final reports and documentation

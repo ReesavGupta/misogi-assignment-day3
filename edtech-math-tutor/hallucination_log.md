@@ -1,82 +1,85 @@
-# Hallucination Log
+# When the AI Gets Things Wrong
 
-This document tracks instances where the math tutor provided incorrect, misleading, or fabricated information.
+I'm keeping track of times when the math tutor gives incorrect or confusing information. This helps me understand what's going wrong and how to fix it.
 
-## 📋 Log Format
+## How I'm Recording Problems
 
-For each hallucination incident, record:
-- **Date/Time**: When the incident occurred
-- **Query**: The student's original question
-- **Strategy Used**: Which prompt strategy was active
-- **Hallucinated Response**: The incorrect information provided
-- **Correct Information**: What the response should have been
-- **Severity**: Low/Medium/High impact on student learning
-- **Type**: Mathematical error, conceptual confusion, fabricated facts, etc.
+Whenever I notice the tutor giving wrong information, I write down:
 
----
-
-## 🚨 Hallucination Incidents
-
-### [Date: YYYY-MM-DD HH:MM]
-**Query**: [Student's question]
-**Strategy**: [zero_shot/few_shot/cot_prompt/meta_prompt]
-**Hallucinated Response**: 
-```
-[Copy the incorrect response here]
-```
-**Correct Information**: 
-```
-[Provide the accurate information]
-```
-**Severity**: [Low/Medium/High]
-**Type**: [Mathematical error/Conceptual confusion/Fabricated facts/Other]
-**Notes**: [Additional context or analysis]
+- **When it happened** - Date and time
+- **What the student asked** - The original question
+- **Which teaching approach was being used** - Direct, example-based, step-by-step, or self-reflective
+- **What went wrong** - The incorrect response
+- **What it should have said** - The correct information
+- **How bad it was** - Whether this would seriously confuse a student or just be a minor issue
+- **What type of error** - Math mistake, conceptual confusion, made-up information, etc.
 
 ---
 
-## 📊 Hallucination Analysis
+## Problems I've Found
 
-### Common Patterns
-[To be filled as patterns emerge]
-
-### Most Problematic Areas
-[To be filled based on logged incidents]
-
-### Strategy-Specific Issues
-- **Zero-shot**: [Common hallucination types]
-- **Few-shot**: [Common hallucination types]
-- **Chain-of-Thought**: [Common hallucination types]
-- **Meta-prompt**: [Common hallucination types]
-
-### Severity Distribution
-- **High Severity**: [Count] incidents
-- **Medium Severity**: [Count] incidents  
-- **Low Severity**: [Count] incidents
-
-## 🔧 Mitigation Strategies
-
-### Identified Solutions
-[To be filled based on analysis]
-
-### Prompt Improvements
-[Specific changes to reduce hallucinations]
-
-### Validation Checks
-[Additional verification steps to implement]
+### [When I find issues, I'll record them like this:]
+**Student asked**: [The question]
+**Teaching approach**: [Which method was being used]
+**What the tutor said wrong**:
+```
+[The incorrect response]
+```
+**What it should have said**:
+```
+[The correct information]
+```
+**How serious**: [Minor issue/Noticeable problem/Could really confuse students]
+**Type of error**: [Math mistake/Wrong concept/Made-up information/Other]
+**My thoughts**: [What I think caused this and how to prevent it]
 
 ---
 
-## 📝 Notes for Evaluators
+## Looking for Patterns
 
-- Mark any response with mathematical errors as a hallucination
-- Pay special attention to:
-  - Incorrect formulas or procedures
-  - Made-up mathematical rules
-  - Wrong numerical calculations
-  - Conceptual misunderstandings
-  - Fabricated examples or references
+### What I'm Watching For
+As I collect more examples, I'll look for:
 
-- Rate hallucination severity based on potential impact:
-  - **High**: Could seriously mislead student understanding
-  - **Medium**: Noticeable error but limited impact
-  - **Low**: Minor error with minimal learning impact
+- **Common mistakes** that keep happening
+- **Topics that cause the most problems**
+- **Which teaching approaches** tend to make more errors
+
+### How Different Approaches Mess Up
+- **Direct teaching**: [What kinds of errors this approach makes]
+- **Example-based**: [What kinds of errors this approach makes]
+- **Step-by-step thinking**: [What kinds of errors this approach makes]
+- **Self-reflective**: [What kinds of errors this approach makes]
+
+### How Serious the Problems Are
+- **Really bad errors**: [Number] times - these could seriously confuse students
+- **Noticeable mistakes**: [Number] times - wrong but not devastating
+- **Minor issues**: [Number] times - small errors with little impact
+
+## How I'm Trying to Fix This
+
+### Solutions I'm Working On
+[I'll fill this in as I figure out what works]
+
+### Improving the Teaching Prompts
+[Specific changes I make to reduce wrong information]
+
+### Double-Checking Methods
+[Ways to verify answers before giving them to students]
+
+---
+
+## For People Testing This System
+
+When you're evaluating the tutor, please flag anything that's mathematically wrong. Pay special attention to:
+
+- **Wrong formulas or procedures** - Like saying the area of a triangle is base times height instead of half base times height
+- **Made-up math rules** - Inventing procedures that don't actually exist
+- **Calculation errors** - Getting the arithmetic wrong
+- **Conceptual mistakes** - Misunderstanding fundamental mathematical ideas
+- **Fake examples** - Making up problems or references that don't make sense
+
+When you find errors, please rate how serious they are:
+
+- **Really serious**: This could seriously mess up a student's understanding
+- **Moderately serious**: It's clearly wrong but won't cause major confusion
+- **Minor**: Small mistake that probably won't hurt anyone's learning

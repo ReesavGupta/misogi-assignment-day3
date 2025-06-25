@@ -1,287 +1,268 @@
-# 🚀 Prompt Engineering Pipeline - Usage Guide
+# How to Use the Prompt Engineering System
 
-## 🏁 Quick Start (5 Minutes)
+## Getting Started (Takes About 5 Minutes)
 
-### **Step 1: Verify Setup**
+### **First, Make Sure Everything's Working**
 ```bash
-# Make sure you're in the project directory and venv is active
+# Navigate to the project and make sure your virtual environment is active
 cd prompt-engineering-pipeline
-# You should see (.venv) in your prompt
+# You should see (.venv) at the beginning of your command prompt
 
-# Test basic functionality
+# Test that the basic components are working
 python src/task_loader.py
 ```
 
-### **Step 2: Run Your First Task**
+### **Try Your First Reasoning Task**
 ```bash
-# Run a simple math task with Tree-of-Thought reasoning
+# Let's run a simple math problem with multiple reasoning paths
 python src/reasoning/runner.py --task math_001 --paths 2 --depth 2
 ```
 
-### **Step 3: Evaluate Performance**
+### **See How Well It Performed**
 ```bash
-# Evaluate the task and generate a report
+# Generate an evaluation report for the task you just ran
 python src/evaluation/evaluation_runner.py --task math_001
 ```
 
-### **Step 4: View Results**
+### **Check Out the Results**
 ```bash
-# Check the generated reports
+# Look at what reports were generated
 ls evaluation/
 cat evaluation/report_*.md
 ```
 
-## 📚 **Detailed Usage Guide**
+## More Detailed Instructions
 
-### **🎯 1. Running Individual Tasks**
+### **Running Specific Problems**
 
-#### **Basic Task Execution**
+#### **Basic Usage**
 ```bash
-# Run a specific task
+# Run any task by its ID
 python src/reasoning/runner.py --task TASK_ID
 
-# Available tasks:
-# - math_001: Average speed calculation
-# - logic_001: Knights and knaves puzzle  
-# - code_001: Python debugging
-# - word_001: Age puzzle
-# - pattern_001: Number sequence
-# - geometry_001: Triangle area
-# - probability_001: Coin flip probability
+# Here are the tasks I've set up:
+# - math_001: Calculating average speed (good starter problem)
+# - logic_001: Knights and knaves logic puzzle
+# - code_001: Finding bugs in Python code
+# - word_001: Age-based word problem
+# - pattern_001: Number sequence recognition
+# - geometry_001: Triangle area calculation
+# - probability_001: Basic coin flip probability
 ```
 
-#### **Customized Execution**
+#### **More Advanced Options**
 ```bash
-# Run with custom parameters
+# Run with custom settings
 python src/reasoning/runner.py --task math_001 --paths 3 --depth 3 --model gpt2
 
-# Run all tasks in a domain
+# Run all math problems at once
 python src/reasoning/runner.py --domain math
 
-# Run all tasks
+# Run everything (this takes a while!)
 python src/reasoning/runner.py --all
 ```
 
-### **🔧 2. Prompt Optimization**
+### **Making Prompts Better Automatically**
 
-#### **Optimize Single Task**
+#### **Improve One Task**
 ```bash
-# Optimize prompts for a specific task
+# Let the system optimize prompts for a specific problem
 python src/prompt_optimization/optimization_runner.py --task geometry_001 --iterations 3
 ```
 
-#### **Domain-Wide Optimization**
+#### **Improve All Tasks in a Category**
 ```bash
-# Optimize all tasks in a domain
+# Optimize all math tasks together
 python src/prompt_optimization/optimization_runner.py --domain math --iterations 2
 ```
 
-#### **Full Optimization Cycle**
+#### **Full Optimization Run**
 ```bash
-# Run complete optimization cycle
+# Run the complete optimization cycle
 python src/prompt_optimization/optimization_runner.py --cycle --threshold 0.1
 ```
 
-### **📊 3. Evaluation & Analysis**
+### **Analyzing Performance**
 
-#### **Single Task Evaluation**
+#### **Check One Task**
 ```bash
-# Evaluate one task
+# See how well a specific task performed
 python src/evaluation/evaluation_runner.py --task code_001
 ```
 
-#### **Comprehensive Evaluation**
+#### **Comprehensive Analysis**
 ```bash
-# Evaluate all tasks
+# Evaluate everything
 python src/evaluation/evaluation_runner.py --all
 
-# Evaluate by domain
+# Just look at logic problems
 python src/evaluation/evaluation_runner.py --domain logic
 ```
 
-#### **Complete Evaluation Cycle**
+#### **Full Analysis Cycle**
 ```bash
-# Run full evaluation with reflection
+# Run complete evaluation with detailed insights
 python src/evaluation/evaluation_runner.py --cycle
 ```
 
-#### **Reflection Analysis**
+#### **Generate Insights**
 ```bash
-# Generate insights from existing reports
+# Create analysis from existing results
 python src/evaluation/evaluation_runner.py --reflect
 ```
 
-## 🎮 **Recommended Workflows**
+## Different Ways to Use This System
 
-### **🔬 Workflow 1: Research & Experimentation**
+### **If You're Just Getting Started**
 ```bash
-# 1. Start with a single task to understand the system
+# 1. Pick one task to understand how everything works
 python src/reasoning/runner.py --task math_001 --paths 2
 
-# 2. Evaluate the results
+# 2. See how well it performed
 python src/evaluation/evaluation_runner.py --task math_001
 
-# 3. Check the evaluation report
+# 3. Read the results
 cat evaluation/report_*.md
 
-# 4. Try optimizing the prompt
+# 4. Try making the prompt better
 python src/prompt_optimization/optimization_runner.py --task math_001 --iterations 2
 
-# 5. Re-evaluate to see improvement
+# 5. Check if the optimization actually helped
 python src/evaluation/evaluation_runner.py --task math_001
 ```
 
-### **🏭 Workflow 2: Production Pipeline**
+### **If You Want to Run Everything**
 ```bash
-# 1. Run complete evaluation baseline
+# 1. Get baseline performance on all tasks
 python src/evaluation/evaluation_runner.py --all
 
-# 2. Run optimization cycle
+# 2. Let the system optimize all prompts
 python src/prompt_optimization/optimization_runner.py --all --iterations 3
 
-# 3. Re-evaluate after optimization
+# 3. See how much everything improved
 python src/evaluation/evaluation_runner.py --all
 
-# 4. Generate reflection insights
+# 4. Generate insights about what worked
 python src/evaluation/evaluation_runner.py --reflect
 
-# 5. Review recommendations
+# 5. Read the analysis
 cat evaluation/reflection.md
 ```
 
-### **🎯 Workflow 3: Domain-Specific Focus**
+### **If You Want to Focus on One Type of Problem**
 ```bash
-# 1. Focus on a specific domain (e.g., math)
+# 1. Run all math problems (or whatever domain you're interested in)
 python src/reasoning/runner.py --domain math
 
-# 2. Evaluate domain performance
+# 2. See how the math tasks performed
 python src/evaluation/evaluation_runner.py --domain math
 
-# 3. Optimize domain-specific prompts
+# 3. Optimize just the math prompts
 python src/prompt_optimization/optimization_runner.py --domain math
 
-# 4. Re-evaluate improvements
+# 4. Check the improvements
 python src/evaluation/evaluation_runner.py --domain math
 ```
 
-## 📁 **Understanding Output Files**
+## Understanding What Gets Generated
 
-### **Reasoning Results** (`logs/reasoning_paths/`)
-- `task_id_TIMESTAMP.json`: Detailed reasoning traces
-- Contains all reasoning paths, consensus scores, execution times
+### **Reasoning Results** (in `logs/reasoning_paths/`)
+- Files like `task_id_TIMESTAMP.json` contain detailed records of how the AI thought through each problem
+- You'll see all the different reasoning paths, how much they agreed with each other, and how long everything took
 
-### **Optimization Logs** (`logs/optimization/`)
-- `task_id_optimization_TIMESTAMP.json`: Optimization history
-- Shows prompt variants, performance scores, improvement trends
+### **Optimization History** (in `logs/optimization/`)
+- Files like `task_id_optimization_TIMESTAMP.json` show how prompts evolved over time
+- You can see different prompt variations, their performance scores, and improvement trends
 
-### **Evaluation Reports** (`evaluation/`)
-- `report_TIMESTAMP.json`: Detailed evaluation data
-- `report_TIMESTAMP.md`: Human-readable evaluation report
-- `reflection.md`: Latest reflection analysis with insights
+### **Evaluation Reports** (in `evaluation/`)
+- `report_TIMESTAMP.json` has all the detailed evaluation data
+- `report_TIMESTAMP.md` is the human-readable version of the same information
+- `reflection.md` contains my analysis and insights about what's working and what isn't
 
-### **Prompt Versions** (`prompts/`)
-- `task_id_v1.txt`, `task_id_v2.txt`: Prompt versions
-- `prompt_registry.json`: Prompt version tracking
+### **Prompt Evolution** (in `prompts/`)
+- Files like `task_id_v1.txt`, `task_id_v2.txt` show how prompts improved over time
+- `prompt_registry.json` keeps track of all the different versions
 
-## ⚙️ **Configuration Options**
+## Customizing How It Runs
 
-### **Model Settings**
+### **Model and Reasoning Settings**
 ```bash
-# Use different model (if available)
+# Use a different model if you have it available
 --model gpt2-medium
 
-# Adjust reasoning parameters
---paths 5          # Number of reasoning paths (default: 3)
---depth 3          # Maximum reasoning depth (default: 2)
+# Control how many different approaches it tries
+--paths 5          # Number of reasoning paths (I usually use 3)
+--depth 3          # How deep each reasoning chain goes (I usually use 2)
 ```
 
 ### **Optimization Settings**
 ```bash
---iterations 5     # Max optimization iterations (default: 3)
---threshold 0.05   # Min improvement threshold (default: 0.1)
+--iterations 5     # How many times to try improving prompts (I usually use 3)
+--threshold 0.05   # How much improvement is needed to keep going (I usually use 0.1)
 ```
 
-## 🔍 **Monitoring & Debugging**
+## Checking That Everything's Working
 
-### **Check System Status**
+### **Basic System Check**
 ```bash
-# Verify all components
+# Make sure all the components are working
 python src/task_loader.py
 python -c "import torch; print(f'CUDA: {torch.cuda.is_available()}')"
 ```
 
-### **View Logs**
+### **Looking at the Logs**
 ```bash
-# Check recent reasoning results
+# See what reasoning results have been generated
 ls -la logs/reasoning_paths/
 cat logs/reasoning_paths/math_001_*.json | head -20
 
-# Check optimization logs
+# Check optimization history
 ls -la logs/optimization/
 ```
 
 ### **Performance Monitoring**
 ```bash
-# Quick performance check
+# Quick check on how well a task is performing
 python src/evaluation/evaluation_runner.py --task geometry_001
 grep "Execution Time" evaluation/report_*.md
 ```
 
-## 🚨 **Troubleshooting**
+## When Things Go Wrong
 
-### **Common Issues**
+### **Common Problems and Solutions**
 
 1. **"Model loading error"**
    ```bash
-   # Check internet connection for first-time model download
+   # Make sure you have internet for the first download
    python -c "from transformers import GPT2LMHeadModel; print('Model accessible')"
    ```
 
 2. **"CUDA out of memory"**
    ```bash
-   # Reduce batch size or use CPU
-   # The system automatically handles this, but you can force CPU:
+   # The system usually handles this automatically, but you can force CPU mode:
    export CUDA_VISIBLE_DEVICES=""
    ```
 
 3. **"Task not found"**
    ```bash
-   # List available tasks
+   # See what tasks are actually available
    python -c "from src.task_loader import TaskLoader; loader = TaskLoader(); print(loader.get_task_summary())"
    ```
 
-## 📈 **Performance Tips**
+## Getting Better Performance
 
-### **For Faster Execution**
+### **If You Want Things to Run Faster**
 - Use fewer reasoning paths: `--paths 2`
-- Reduce reasoning depth: `--depth 2`
-- Limit optimization iterations: `--iterations 2`
+- Keep reasoning shallow: `--depth 2`
+- Don't optimize as much: `--iterations 2`
 
-### **For Better Quality**
-- Increase reasoning paths: `--paths 5`
-- Increase reasoning depth: `--depth 3`
-- More optimization iterations: `--iterations 5`
+### **If You Want Better Quality Results**
+- Try more reasoning paths: `--paths 5`
+- Go deeper in reasoning: `--depth 3`
+- Optimize more thoroughly: `--iterations 5`
 
-### **For Memory Efficiency**
-- The system is already optimized for 4GB VRAM
-- CPU fallback is automatic
-- Batch processing is memory-efficient
+### **If You're Running Low on Memory**
+- I've already optimized this for 4GB VRAM
+- The system automatically falls back to CPU if needed
+- Batch processing is designed to be memory-efficient
 
-## 🎯 **Next Steps**
-
-1. **Start Simple**: Run a single task evaluation
-2. **Explore**: Try different domains and tasks
-3. **Optimize**: Use the optimization pipeline
-4. **Analyze**: Review evaluation reports and reflections
-5. **Iterate**: Use insights to improve performance
-
-## 📞 **Getting Help**
-
-- Check `PROJECT_COMPLETION_SUMMARY.md` for technical details
-- Review `PRD.md` for system specifications
-- Examine log files for detailed execution traces
-- All components have built-in help: `python script.py --help`
-
----
-
-**Ready to start? Try the Quick Start section above! 🚀**
