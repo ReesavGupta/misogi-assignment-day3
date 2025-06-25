@@ -1,0 +1,379 @@
+# Prompt Engineering Pipeline - .gitignore
+# Optimized for minimal repository size while preserving deliverables
+
+# ============================================================================
+# PYTHON SPECIFIC
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Virtual environments (CRITICAL - these are huge!)
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.conda/
+conda-meta/
+
+# ============================================================================
+# MACHINE LEARNING / AI SPECIFIC
+# ============================================================================
+
+# Model files and checkpoints (can be GBs in size!)
+*.bin
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+
+# Hugging Face cache (can be very large)
+.cache/
+transformers_cache/
+huggingface_hub/
+.huggingface/
+
+# PyTorch specific
+lightning_logs/
+checkpoints/
+wandb/
+.wandb/
+
+# Model downloads and cache
+models/
+model_cache/
+downloaded_models/
+pretrained_models/
+
+# ============================================================================
+# PROJECT SPECIFIC - KEEP DELIVERABLES, EXCLUDE LARGE FILES
+# ============================================================================
+
+# Keep all required deliverables:
+# - README.md ✓
+# - PRD.md ✓
+# - USAGE_GUIDE.md ✓
+# - IMPROVEMENTS_GUIDE.md ✓
+# - LLAMA_SETUP_GUIDE.md ✓
+# - PROJECT_COMPLETION_SUMMARY.md ✓
+# - src/ folder ✓
+# - prompts/ folder ✓
+# - tasks/ folder ✓
+# - evaluation/ folder (selective) ✓
+
+# Exclude large log files but keep structure and samples
+logs/large_logs/
+logs/backup/
+logs/archive/
+
+# Keep recent logs but exclude old timestamped files (keep last few)
+logs/summary_report_202*.json
+logs/reasoning_paths/*_202*.json
+logs/optimization/*_202*.json
+!logs/summary_report_*latest*.json
+!logs/reasoning_paths/*_latest*.json
+!logs/optimization/*_latest*.json
+
+# Keep sample logs for demonstration (uncomment to keep specific ones)
+# !logs/summary_report_20250625_190552.json
+# !logs/reasoning_paths/geometry_001_20250625_185728.json
+
+# Exclude temporary and debug files
+logs/temp_*.json
+logs/debug_*.json
+logs/test_*.json
+logs/*.tmp
+
+# Exclude large evaluation files but keep reports
+evaluation/large_dataset/
+evaluation/full_results/
+evaluation/raw_outputs/
+evaluation/*_full.json
+evaluation/*_raw.json
+
+# Keep final evaluation reports
+!evaluation/*.md
+!evaluation/reflection.json
+
+# ============================================================================
+# DATA AND DATASETS
+# ============================================================================
+
+# Large datasets (users can download separately)
+data/
+datasets/
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.arrow
+
+# Exclude large JSON files but keep configuration
+*_large.json
+*_full.json
+*_dataset.json
+!*_config.json
+!*_registry.json
+
+# ============================================================================
+# LOGS AND TEMPORARY FILES
+# ============================================================================
+
+# Application logs
+*.log
+debug.log
+error.log
+training.log
+inference.log
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# ============================================================================
+# DEVELOPMENT AND TESTING
+# ============================================================================
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*.ipynb
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================================================
+# SYSTEM FILES
+# ============================================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# ============================================================================
+# SECURITY AND CONFIGURATION
+# ============================================================================
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+secrets.json
+config.json
+api_keys.txt
+.secrets/
+
+# Weights & Biases
+wandb/
+.wandb/
+
+# ============================================================================
+# KEEP THESE IMPORTANT FILES (EXPLICIT INCLUSION)
+# ============================================================================
+
+# Force include important deliverables
+!README.md
+!PRD.md
+!USAGE_GUIDE.md
+!IMPROVEMENTS_GUIDE.md
+!LLAMA_SETUP_GUIDE.md
+!PROJECT_COMPLETION_SUMMARY.md
+!requirements.txt
+!setup_llama.py
+!test_*.py
+
+# Force include core directories and files
+!src/
+!src/**/*.py
+!prompts/
+!prompts/**/*.json
+!prompts/**/*.txt
+!tasks/
+!tasks/**/*.json
+!evaluation/*.md
+
+# Keep one sample of each log type for demonstration
+!logs/summary_report_sample.json
+!logs/reasoning_paths/sample_reasoning.json
+!logs/optimization/sample_optimization.json
+
+# ============================================================================
+# ADDITIONAL ML/AI EXCLUSIONS
+# ============================================================================
+
+# TensorBoard logs
+runs/
+tb_logs/
+tensorboard_logs/
+
+# MLflow
+mlruns/
+.mlflow/
+
+# DVC (Data Version Control)
+.dvc/
+*.dvc
+
+# Experiment tracking
+experiments/
+experiment_logs/
+.neptune/
+
+# CUDA/GPU specific
+*.cu
+*.cuh
+
+# Conda environments
+.conda/
+environment.yml.lock
+
+# ============================================================================
+# PROMPT ENGINEERING SPECIFIC
+# ============================================================================
+
+# Large prompt optimization results
+prompts/optimization_results/
+prompts/large_experiments/
+prompts/*_full_results.json
+
+# Temporary prompt versions (keep only final versions)
+prompts/temp_*.json
+prompts/draft_*.json
+prompts/test_*.json
+prompts/*_backup.json
+
+# Keep versioned prompts but exclude intermediate experiments
+!prompts/*_v*.json
+!prompts/*_v*.txt
+!prompts/prompt_registry.json
+
+# ============================================================================
+# TASK AND EVALUATION SPECIFIC
+# ============================================================================
+
+# Large task datasets
+tasks/large_datasets/
+tasks/extended_tasks/
+tasks/*_full.json
+tasks/*_extended.json
+
+# Keep core task definitions
+!tasks/*.json
+!tasks/task_registry.json
+
+# Evaluation artifacts
+evaluation/checkpoints/
+evaluation/model_outputs/
+evaluation/large_results/
+
+# ============================================================================
+# PERFORMANCE AND OPTIMIZATION
+# ============================================================================
+
+# Profiling results
+*.prof
+*.profile
+.profiling/
+
+# Memory dumps
+*.dump
+core.*
+
+# Performance logs
+perf_*.log
+benchmark_*.json
+
+# ============================================================================
+# DOCUMENTATION BUILD
+# ============================================================================
+
+# Sphinx
+docs/_build/
+docs/build/
+
+# MkDocs
+site/
+
+# ============================================================================
+# FINAL NOTES
+# ============================================================================
+
+# This .gitignore is designed to:
+# 1. Exclude all large ML model files and caches
+# 2. Preserve essential project deliverables
+# 3. Keep sample logs for demonstration
+# 4. Maintain project functionality while minimizing size
+# 5. Allow easy reproduction of results without bloat

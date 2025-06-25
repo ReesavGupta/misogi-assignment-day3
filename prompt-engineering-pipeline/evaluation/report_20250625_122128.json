@@ -1,0 +1,76 @@
+{
+  "report_id": "report_20250625_122128",
+  "evaluation_timestamp": "2025-06-25T12:21:28.211474",
+  "total_tasks": 1,
+  "task_evaluations": [
+    {
+      "task_id": "geometry_001",
+      "task_domain": "geometry",
+      "task_difficulty": "easy",
+      "expected_answer": "Area: 30 cm², Hypotenuse: 13 cm",
+      "generated_answer": "",
+      "accuracy_score": 0.0,
+      "reasoning_coherence": 0.45000000000000007,
+      "hallucination_rate": 0.5,
+      "execution_time": 22.816338300704956,
+      "consensus_score": 0.4,
+      "prompt_version": 1,
+      "evaluation_timestamp": "2025-06-25T12:21:28.207456",
+      "detailed_metrics": {
+        "num_reasoning_paths": 2,
+        "avg_path_quality": 0.85,
+        "model_info": {
+          "model_name": "gpt2",
+          "device": "cpu",
+          "num_paths": 2,
+          "max_depth": 2
+        },
+        "answer_length": 0,
+        "reasoning_depth": 2
+      }
+    }
+  ],
+  "aggregate_metrics": {
+    "overall_accuracy": 0.0,
+    "overall_coherence": 0.45000000000000007,
+    "overall_hallucination_rate": 0.5,
+    "average_execution_time": 22.816338300704956,
+    "average_consensus_score": 0.4,
+    "accuracy_std": 0.0
+  },
+  "domain_breakdown": {
+    "geometry": {
+      "count": 1,
+      "accuracy": 0.0,
+      "coherence": 0.45000000000000007,
+      "hallucination_rate": 0.5,
+      "execution_time": 22.816338300704956
+    }
+  },
+  "difficulty_breakdown": {
+    "easy": {
+      "count": 1,
+      "accuracy": 0.0,
+      "coherence": 0.45000000000000007,
+      "hallucination_rate": 0.5
+    }
+  },
+  "improvement_analysis": {
+    "versions_tested": [
+      1
+    ],
+    "version_performance": {
+      "1": {
+        "count": 1,
+        "accuracy": 0.0,
+        "coherence": 0.45000000000000007
+      }
+    }
+  },
+  "recommendations": [
+    "Overall accuracy is low. Consider improving prompt clarity and specificity.",
+    "Reasoning coherence needs improvement. Focus on step-by-step prompting.",
+    "High hallucination rate detected. Consider more constrained prompting.",
+    "Poor performance in geometry domain. Consider domain-specific prompt optimization."
+  ]
+}

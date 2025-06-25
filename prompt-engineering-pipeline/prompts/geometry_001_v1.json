@@ -1,0 +1,10 @@
+{
+  "task_id": "geometry_001",
+  "version": 1,
+  "content": "Task: Triangle Area Problem\n\nSolve this geometry problem by applying relevant formulas and showing calculations.",
+  "performance_score": 0.0,
+  "created_at": "2025-06-25T12:02:21.529176",
+  "metadata": {
+    "type": "initial_default"
+  }
+}

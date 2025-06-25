@@ -1,0 +1,25 @@
+{
+  "id": "word_001", 
+  "domain": "word_problems",
+  "title": "Age Puzzle",
+  "problem": "Sarah is currently 3 times as old as her daughter Emma. In 12 years, Sarah will be twice as old as Emma. How old are Sarah and Emma now?",
+  "expected_solution": "Sarah is 36 years old, Emma is 12 years old",
+  "expected_reasoning": [
+    "Let Emma's current age = x years",
+    "Then Sarah's current age = 3x years",
+    "In 12 years: Emma will be (x + 12) years old",
+    "In 12 years: Sarah will be (3x + 12) years old",
+    "Given condition: Sarah will be twice Emma's age in 12 years",
+    "Equation: 3x + 12 = 2(x + 12)",
+    "Expand: 3x + 12 = 2x + 24",
+    "Solve: 3x - 2x = 24 - 12",
+    "Therefore: x = 12",
+    "Emma's current age: 12 years",
+    "Sarah's current age: 3 × 12 = 36 years",
+    "Verify: In 12 years, Emma=24, Sarah=48, and 48 = 2×24 ✓"
+  ],
+  "evaluation_rule": "exact_match",
+  "difficulty": "medium",
+  "tags": ["algebra", "equations", "age_problems"],
+  "created_date": "2025-06-25"
+}

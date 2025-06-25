@@ -1,0 +1,85 @@
+{
+  "task_registry": {
+    "version": "1.0",
+    "created_date": "2025-06-25",
+    "total_tasks": 7,
+    "domains": [
+      "math",
+      "logic", 
+      "code_debugging",
+      "word_problems",
+      "pattern_recognition",
+      "geometry",
+      "probability"
+    ],
+    "difficulty_distribution": {
+      "easy": 2,
+      "medium": 4,
+      "hard": 1
+    },
+    "tasks": [
+      {
+        "id": "math_001",
+        "file": "math_001.json",
+        "domain": "math",
+        "title": "Average Speed Calculation",
+        "difficulty": "medium",
+        "tags": ["arithmetic", "physics", "multi-step"]
+      },
+      {
+        "id": "logic_001", 
+        "file": "logic_001.json",
+        "domain": "logic",
+        "title": "Knights and Knaves Puzzle",
+        "difficulty": "hard",
+        "tags": ["deduction", "contradiction", "logical_reasoning"]
+      },
+      {
+        "id": "code_001",
+        "file": "code_001.json", 
+        "domain": "code_debugging",
+        "title": "Python List Bug Fix",
+        "difficulty": "easy",
+        "tags": ["debugging", "modulo", "conditional_logic"]
+      },
+      {
+        "id": "word_001",
+        "file": "word_001.json",
+        "domain": "word_problems", 
+        "title": "Age Puzzle",
+        "difficulty": "medium",
+        "tags": ["algebra", "equations", "age_problems"]
+      },
+      {
+        "id": "pattern_001",
+        "file": "pattern_001.json",
+        "domain": "pattern_recognition",
+        "title": "Number Sequence Pattern", 
+        "difficulty": "medium",
+        "tags": ["sequences", "arithmetic_progression", "pattern_analysis"]
+      },
+      {
+        "id": "geometry_001",
+        "file": "geometry_001.json",
+        "domain": "geometry",
+        "title": "Triangle Area Problem",
+        "difficulty": "easy", 
+        "tags": ["pythagorean_theorem", "area_calculation", "right_triangles"]
+      },
+      {
+        "id": "probability_001",
+        "file": "probability_001.json",
+        "domain": "probability",
+        "title": "Coin Flip Probability",
+        "difficulty": "medium",
+        "tags": ["combinatorics", "binomial_probability", "counting"]
+      }
+    ],
+    "evaluation_rules": {
+      "exact_match": "Answer must match expected solution exactly",
+      "numerical_equivalence": "Numerical values must be equivalent (e.g., 3/8 = 0.375)",
+      "logical_equivalence": "Logic must be sound even if wording differs",
+      "semantic_match": "Meaning must be equivalent even if phrasing differs"
+    }
+  }
+}

@@ -1,0 +1,239 @@
+# EdTech Math Tutor - .gitignore
+# Optimized for minimal repository size while preserving deliverables
+
+# ============================================================================
+# PYTHON SPECIFIC
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================================================
+# PROJECT SPECIFIC - KEEP DELIVERABLES, EXCLUDE TEMPORARY FILES
+# ============================================================================
+
+# Keep all required deliverables:
+# - README.md ✓
+# - domain_analysis.md ✓
+# - prompts/ folder ✓
+# - evaluation/ folder (with selective exclusion) ✓
+# - src/ folder ✓
+# - hallucination_log.md ✓
+
+# Exclude large log files but keep structure
+evaluation/large_logs/
+evaluation/backup_logs/
+evaluation/*_backup.json
+
+# Exclude temporary evaluation runs (keep only final results)
+evaluation/temp_*.json
+evaluation/debug_*.json
+evaluation/test_run_*.json
+
+# Keep sample output_logs.json but exclude massive log files
+evaluation/output_logs_full.json
+evaluation/output_logs_*.json
+!evaluation/output_logs.json
+
+# Exclude temporary reports (keep final analysis)
+evaluation/temp_report_*.md
+evaluation/draft_*.md
+
+# ============================================================================
+# OLLAMA / LLM SPECIFIC
+# ============================================================================
+
+# Don't include model files (users should download via Ollama)
+models/
+*.bin
+*.gguf
+*.safetensors
+
+# Exclude Ollama cache and temporary files
+.ollama/
+ollama_cache/
+model_cache/
+
+# ============================================================================
+# LOGS AND TEMPORARY FILES
+# ============================================================================
+
+# Application logs
+logs/
+*.log
+debug.log
+error.log
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+*.tmp
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# ============================================================================
+# SYSTEM FILES
+# ============================================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# ============================================================================
+# DEVELOPMENT AND TESTING
+# ============================================================================
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ============================================================================
+# KEEP THESE IMPORTANT FILES (EXPLICIT INCLUSION)
+# ============================================================================
+
+# Force include important deliverables even if patterns might exclude them
+!README.md
+!domain_analysis.md
+!PROJECT_SUMMARY.md
+!hallucination_log.md
+!requirements.txt
+!setup.py
+!test_setup.py
+
+# Force include all prompt files
+!prompts/
+!prompts/*.txt
+
+# Force include core source files
+!src/
+!src/*.py
+
+# Force include essential evaluation files
+!evaluation/
+!evaluation/input_queries.json
+!evaluation/analysis_report.md
+!evaluation/output_logs.json
+
+# ============================================================================
+# OPTIONAL: EXCLUDE LARGE DATASETS (UNCOMMENT IF NEEDED)
+# ============================================================================
+
+# Uncomment these if you have large datasets
+# evaluation/large_dataset.json
+# evaluation/extended_queries.json
+# evaluation/performance_data/
+
+# ============================================================================
+# SECURITY
+# ============================================================================
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+secrets.json
+config.json
+api_keys.txt
+
+# ============================================================================
+# DOCUMENTATION BUILD FILES
+# ============================================================================
+
+# Sphinx documentation
+docs/_build/
+docs/build/
+
+# MkDocs
+site/

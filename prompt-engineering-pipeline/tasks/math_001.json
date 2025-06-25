@@ -1,0 +1,18 @@
+{
+  "id": "math_001",
+  "domain": "math",
+  "title": "Average Speed Calculation",
+  "problem": "A train travels 60 km/h for 1.5 hours and then 90 km/h for 2 hours. What is the average speed for the entire journey?",
+  "expected_solution": "81 km/h",
+  "expected_reasoning": [
+    "Calculate distance for first segment: 60 km/h × 1.5 h = 90 km",
+    "Calculate distance for second segment: 90 km/h × 2 h = 180 km", 
+    "Total distance: 90 km + 180 km = 270 km",
+    "Total time: 1.5 h + 2 h = 3.5 h",
+    "Average speed: 270 km ÷ 3.5 h = 77.14 km/h ≈ 81 km/h"
+  ],
+  "evaluation_rule": "exact_match",
+  "difficulty": "medium",
+  "tags": ["arithmetic", "physics", "multi-step"],
+  "created_date": "2025-06-25"
+}

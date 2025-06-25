@@ -1,0 +1,90 @@
+{
+  "report_id": "reflection_20250625_121411",
+  "reflection_timestamp": "2025-06-25T12:14:11.792005",
+  "evaluation_reports_analyzed": [
+    "report_20250625_121232"
+  ],
+  "key_insights": [
+    {
+      "category": "Failure Patterns",
+      "insight_type": "Domain Weakness",
+      "description": "Poor performance in code_debugging domain",
+      "evidence": [
+        "Average accuracy: 7.1%"
+      ],
+      "confidence": 0.9,
+      "actionable_steps": [
+        "Focus optimization efforts on code_debugging tasks",
+        "Consider domain-specific prompting strategies",
+        "Increase reasoning depth for complex domains"
+      ]
+    }
+  ],
+  "performance_trends": {
+    "accuracy_trend": [
+      0.07142857142857142
+    ],
+    "coherence_trend": [
+      0.45
+    ],
+    "hallucination_trend": [
+      0.25
+    ],
+    "execution_time_trend": [
+      23.451367616653442
+    ],
+    "improvement_over_time": {},
+    "domain_trends": {},
+    "difficulty_trends": {}
+  },
+  "success_patterns": {
+    "high_accuracy_tasks": [],
+    "successful_domains": [],
+    "effective_prompt_versions": [
+      {
+        "version": 1,
+        "average_accuracy": 0.07142857142857142,
+        "task_count": 1
+      }
+    ],
+    "optimal_reasoning_depth": {
+      "depth": 2,
+      "average_accuracy": 0.07142857142857142
+    },
+    "success_characteristics": {}
+  },
+  "failure_patterns": {
+    "low_accuracy_tasks": [
+      {
+        "task_id": "code_001",
+        "domain": "code_debugging",
+        "accuracy": 0.07142857142857142,
+        "hallucination_rate": 0.25,
+        "expected": "Change 'num % 2 == 1' to 'num % 2 == 0' to check f",
+        "generated": "__import__(1)"
+      }
+    ],
+    "problematic_domains": [
+      {
+        "domain": "code_debugging",
+        "average_accuracy": 0.07142857142857142,
+        "task_count": 1
+      }
+    ],
+    "common_failure_modes": [],
+    "hallucination_hotspots": [],
+    "performance_bottlenecks": {
+      "average_execution_time": 23.451367616653442,
+      "slow_tasks": []
+    }
+  },
+  "optimization_opportunities": [
+    "Focus optimization on underperforming domains"
+  ],
+  "next_steps": [
+    "Focus optimization on underperforming domains",
+    "Consider domain-specific prompting strategies",
+    "Focus optimization efforts on code_debugging tasks",
+    "Increase reasoning depth for complex domains"
+  ]
+}

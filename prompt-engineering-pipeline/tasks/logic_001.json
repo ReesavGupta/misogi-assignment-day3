@@ -1,0 +1,23 @@
+{
+  "id": "logic_001",
+  "domain": "logic",
+  "title": "Knights and Knaves Puzzle",
+  "problem": "On an island, knights always tell the truth and knaves always lie. You meet two inhabitants, A and B. A says: 'At least one of us is a knave.' What are A and B?",
+  "expected_solution": "A is a knight, B is a knave",
+  "expected_reasoning": [
+    "Assume A is a knight (tells truth)",
+    "If A is a knight, then A's statement 'At least one of us is a knave' must be true",
+    "Since A is a knight, for the statement to be true, B must be a knave",
+    "Check: A (knight) + B (knave) = at least one knave ✓",
+    "Assume A is a knave (lies)",
+    "If A is a knave, then A's statement must be false",
+    "Statement: 'At least one of us is a knave' would be false",
+    "This means both A and B are knights",
+    "But A can't be both a knave and a knight - contradiction!",
+    "Therefore: A is a knight, B is a knave"
+  ],
+  "evaluation_rule": "logical_equivalence",
+  "difficulty": "hard",
+  "tags": ["deduction", "contradiction", "logical_reasoning"],
+  "created_date": "2025-06-25"
+}

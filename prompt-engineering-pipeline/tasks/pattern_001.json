@@ -1,0 +1,24 @@
+{
+  "id": "pattern_001",
+  "domain": "pattern_recognition", 
+  "title": "Number Sequence Pattern",
+  "problem": "Find the next number in this sequence: 2, 6, 12, 20, 30, ?",
+  "expected_solution": "42",
+  "expected_reasoning": [
+    "Look for differences between consecutive terms:",
+    "6 - 2 = 4",
+    "12 - 6 = 6", 
+    "20 - 12 = 8",
+    "30 - 20 = 10",
+    "First differences: 4, 6, 8, 10",
+    "The differences increase by 2 each time",
+    "Next difference should be: 10 + 2 = 12",
+    "Therefore next number: 30 + 12 = 42",
+    "Alternative pattern: n(n+1) where n starts at 1",
+    "1x2=2, 2x3=6, 3x4=12, 4x5=20, 5x6=30, 6x7=42"
+  ],
+  "evaluation_rule": "exact_match",
+  "difficulty": "medium", 
+  "tags": ["sequences", "arithmetic_progression", "pattern_analysis"],
+  "created_date": "2025-06-25"
+}

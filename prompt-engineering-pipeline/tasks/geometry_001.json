@@ -1,0 +1,22 @@
+{
+  "id": "geometry_001",
+  "domain": "geometry",
+  "title": "Triangle Area Problem", 
+  "problem": "A right triangle has legs of length 5 cm and 12 cm. What is the area of the triangle, and what is the length of the hypotenuse?",
+  "expected_solution": "Area: 30 cm², Hypotenuse: 13 cm",
+  "expected_reasoning": [
+    "Given: Right triangle with legs a = 5 cm and b = 12 cm",
+    "Area of right triangle = (1/2) × base × height",
+    "Area = (1/2) × 5 × 12 = (1/2) × 60 = 30 cm²",
+    "For hypotenuse, use Pythagorean theorem: c² = a² + b²",
+    "c² = 5² + 12²",
+    "c² = 25 + 144", 
+    "c² = 169",
+    "c = √169 = 13 cm",
+    "Verify: This is a 5-12-13 Pythagorean triple"
+  ],
+  "evaluation_rule": "exact_match",
+  "difficulty": "easy",
+  "tags": ["pythagorean_theorem", "area_calculation", "right_triangles"],
+  "created_date": "2025-06-25"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "code_001",
+  "domain": "code_debugging",
+  "title": "Python List Bug Fix",
+  "problem": "This Python function should return the sum of even numbers in a list, but it has a bug. Find and explain the fix:\n\n```python\ndef sum_evens(numbers):\n    total = 0\n    for num in numbers:\n        if num % 2 == 1:\n            total += num\n    return total\n```",
+  "expected_solution": "Change 'num % 2 == 1' to 'num % 2 == 0' to check for even numbers instead of odd numbers",
+  "expected_reasoning": [
+    "The function is supposed to sum even numbers",
+    "Even numbers have remainder 0 when divided by 2",
+    "Odd numbers have remainder 1 when divided by 2", 
+    "Current condition 'num % 2 == 1' checks for odd numbers",
+    "This means the function currently sums odd numbers, not even numbers",
+    "Fix: Change condition to 'num % 2 == 0' to check for even numbers",
+    "Test: [1,2,3,4] should return 2+4=6, not 1+3=4"
+  ],
+  "evaluation_rule": "semantic_match",
+  "difficulty": "easy",
+  "tags": ["debugging", "modulo", "conditional_logic"],
+  "created_date": "2025-06-25"
+}
